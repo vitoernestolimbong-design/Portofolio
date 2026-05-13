@@ -55,21 +55,26 @@
     from { height: var(--radix-accordion-content-height); }
     to { height: 0; }
   }
+
+  /* High performance background animations */
+  @keyframes float-blob {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
 }
 
-/*
-  The default theme
-*/
 :root {
-  --background: oklch(0.98 0 0); /* Soft gray / off-white */
+  --background: oklch(0.98 0 0);
   --foreground: oklch(0.14 0.05 285);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.14 0.05 285);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.14 0.05 285);
-  --primary: oklch(0.2 0.1 260); /* Deep blueish black for light mode buttons */
+  --primary: oklch(0.2 0.1 260);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.96 0.01 260); /* Soft blue gradient base */
+  --secondary: oklch(0.96 0.01 260);
   --secondary-foreground: oklch(0.2 0.1 260);
   --muted: oklch(0.96 0.01 260);
   --muted-foreground: oklch(0.55 0.05 260);
@@ -83,19 +88,16 @@
   --radius: 0.75rem;
 }
 
-/*
-  The dark theme
-*/
 .dark {
-  --background: oklch(0.1 0 0); /* Black / Very dark zinc */
+  --background: oklch(0.1 0 0);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.13 0 0);
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.13 0 0);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.6 0.25 285); /* Purple neon */
+  --primary: oklch(0.6 0.25 285);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.2 0.05 260); /* Dark bluish gray */
+  --secondary: oklch(0.2 0.05 260);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.2 0.05 260);
   --muted-foreground: oklch(0.65 0.05 260);
@@ -109,46 +111,25 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-    scroll-behavior: smooth;
-  }
-  
-  /* Selection color */
-  ::selection {
-    @apply bg-primary/30 text-primary-foreground;
-  }
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; scroll-behavior: smooth; }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 dark:bg-black/20 backdrop-blur-lg border border-white/10 shadow-xl;
+    @apply bg-white/5 dark:bg-black/20 backdrop-blur-md border border-white/10 shadow-xl;
   }
-  
   .glass-card {
-    @apply bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl;
+    @apply bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-2xl;
   }
-
-  .text-glow {
-    text-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
-  }
-  
-  .text-glow-blue {
-    text-shadow: 0 0 20px rgba(76, 201, 240, 0.5);
-  }
-
   .bg-gradient-futuristic {
-    @apply bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-black dark:via-zinc-900 dark:to-zinc-950;
+    background: radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.05) 0%, transparent 70%);
+    background-color: var(--background);
+    @apply bg-no-repeat bg-fixed;
   }
-
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  .animate-float-blob {
+    animation: float-blob 20s infinite alternate ease-in-out;
   }
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  .text-glow { text-shadow: 0 0 20px rgba(157, 78, 221, 0.5); }
+  .text-glow-blue { text-shadow: 0 0 20px rgba(76, 201, 240, 0.5); }
 }
