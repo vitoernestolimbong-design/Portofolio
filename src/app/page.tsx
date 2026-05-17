@@ -5,7 +5,7 @@ import { AboutSection } from "@/components/sections/about";
 import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { ExperienceSection } from "@/components/sections/experience";
-import { EducationSection } from "@/components/sections/education";
+import { CertificatesSection } from "@/components/sections/certificates";
 import { ContactSection } from "@/components/sections/contact";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
         <SkillsSection />
         <ProjectsSection />
         <ExperienceSection />
-        <EducationSection />
+        <CertificatesSection />
         <ContactSection />
       </div>
 

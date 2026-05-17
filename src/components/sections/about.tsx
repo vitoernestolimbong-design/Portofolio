@@ -54,14 +54,35 @@ export function AboutSection() {
               Experienced with modern web technologies including React.js, Laravel, Python, and SQL. I bring strong analytical thinking, teamwork, and communication skills to every project I undertake.
             </p>
             
-            <div className="pt-6 relative h-64 w-full">
-              <Image 
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80" 
-                alt="Workspace" 
-                fill
-                className="rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 object-cover"
-              />
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ delay: 0.3 }}
+              className="pt-4"
+            >
+              <GlassCard className="p-6 relative overflow-hidden border-l-4 border-l-primary hover:border-l-blue-500 transition-colors">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                  <GraduationCap className="w-32 h-32" />
+                </div>
+                <div className="relative z-10 flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-primary font-semibold mb-1">
+                    <GraduationCap className="w-5 h-5" />
+                    <span className="uppercase tracking-wider text-sm">Education</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Bachelor of Informatics</h3>
+                    <h4 className="text-lg text-primary font-medium">Sanata Dharma University</h4>
+                  </div>
+                  <div className="inline-flex items-center w-fit px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mt-1 mb-2">
+                    2021 - 2025
+                  </div>
+                  <p className="text-muted-foreground text-sm max-w-[90%]">
+                    Graduated with a GPA of 3.20. Focused on intelligent systems, web technologies, and software engineering principles.
+                  </p>
+                </div>
+              </GlassCard>
+            </motion.div>
           </motion.div>
 
           <motion.div 

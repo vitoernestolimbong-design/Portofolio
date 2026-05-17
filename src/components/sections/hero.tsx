@@ -93,7 +93,7 @@ export function HeroSection() {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
-                href="https://drive.google.com/uc?id=1EzJhJwnpMMzZH-UnuHURjxLz1YYx16z1&export=download" 
+                href="https://drive.google.com/file/d/1TyVDeU5fQFMdvYpIdlY-Clw50rGSR6JZ/view?usp=drive_link" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-foreground transition-all duration-200 bg-transparent border border-border rounded-full hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary glass hover:border-primary/50"
