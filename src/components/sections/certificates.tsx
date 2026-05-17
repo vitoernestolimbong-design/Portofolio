@@ -25,14 +25,14 @@ const certificates = [
   {
     title: "Sharing Ngos-Ngosan",
     organization: "HMIF Universitas Sanata Dharma",
-    date: "3 Agustus 2022",
+    date: "3 August 2022",
     description: "Sharing Ngos-Ngosan dengan tema \"Ngobrol Santai Dapat Ilmu\"",
     image: "/certificates/ngos-ngosan-2022.jpg"
   },
   {
     title: "IT DAYS 2021 Animo",
     organization: "FST Universitas Sanata Dharma",
-    date: "31 Desember 2021",
+    date: "31 December 2021",
     description: "Technology Development to Enhance Local \"UMKM\"",
     image: "/certificates/it-days-2021.jpg"
   },
