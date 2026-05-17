@@ -23,6 +23,9 @@ export function Navbar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
+    if (latest < 100) {
+      setActiveSection("");
+    }
   });
 
   useEffect(() => {
