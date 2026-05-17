@@ -7,7 +7,7 @@ import { AnimatedBackground } from "../animated-background";
 import Image from "next/image";
 
 export function HeroSection() {
-  const titles = ["Data Analyst", "Web Developer", "Administration"];
+  const titles = ["Data Analyst", "Web Developer"];
   const [titleIndex, setTitleIndex] = useState(0);
 
   useEffect(() => {
